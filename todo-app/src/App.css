@@ -1,37 +1,146 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
 .app {
   text-align: center;
-  padding: 40px;
-  font-family: Arial, sans-serif;
+  padding: 2rem;
 }
 
 .input-container {
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-input {
-  padding: 10px;
-  font-size: 16px;
-  width: 200px;
+input[type="text"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 250px;
 }
 
 button {
-  padding: 10px 15px;
-  margin-left: 10px;
-  font-size: 16px;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
 .task {
-  background-color: #f2f2f2;
-  margin: 10px auto;
-  padding: 10px;
-  width: 300px;
   display: flex;
   justify-content: space-between;
-  border-radius: 5px;
+  align-items: center;
+  background: white;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem auto;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.task.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.action-buttons button {
+  margin-left: 5px;
+}
+
+.filter-buttons {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.theme-button-container {
+  margin-top: 2rem;
+}
+
+/* THEMES */
+.dual {
+  background: linear-gradient(to right, #ffff99 50%, #ccffcc 50%);
+  min-height: 100vh;
+}
+
+.gradient {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  min-height: 100vh;
+}
+
+.dark {
+  background: #121212;
+  color: white;
+  min-height: 100vh;
+}
+
+.blue {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  min-height: 100vh;
+}
+
+.pastel {
+  background: #ffd1dc;
+  min-height: 100vh;
+}
+
+.sunset {
+  background: linear-gradient(to right, #0b486b, #f56217);
+  min-height: 100vh;
+}
+
+.forest {
+  background: linear-gradient(to right, #5a3f37, #2c7744);
+  min-height: 100vh;
+}
+
+.ocean {
+  background: linear-gradient(to right, #2E3192, #1BFFFF);
+  min-height: 100vh;
+}
+
+.peach {
+  background: #ffe5b4;
+  min-height: 100vh;
+}
+
+.neon {
+  background: #0f0f0f;
+  color: #39ff14;
+  min-height: 100vh;
+}
+/* favGradient Theme - Neon Pink to Yellow to Green */
+.app.favGradient {
+  background: linear-gradient(135deg, #ff00f7, #e6ff00, #00ff90);
+  background-size: 400% 400%;
+  animation: favGradientShift 7s ease infinite;
+  color: #000;
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: -1;
+}
+
+@keyframes favGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
